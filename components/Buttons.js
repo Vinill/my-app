@@ -94,12 +94,13 @@ export function MyButton(props) {
     const { onPress, text} = props
 
     return (
-        <TouchableOpacity style = {styles.ButtonTwo}>
+        <TouchableOpacity onPress={ onPress } style = {styles.ButtonTwo}>
             <Text
                 style = {{
                     fontSize: 15,
                     fontWeight: 'bold',
                     color: '#fafafa',
+                    textAlign: 'center',
                 }}
             >
                 { text }
@@ -117,6 +118,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
     },
     ButtonTwo: {
         backgroundColor: '#00bfff',
@@ -126,6 +128,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf: 'center',
     },
     button: {
         width: '80%',

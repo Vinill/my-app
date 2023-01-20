@@ -1,14 +1,12 @@
 import React, { useState }  from 'react'
-import { View, StyleSheet, Modal } from 'react-native'
+import { View, StyleSheet, Modal, Text } from 'react-native'
 import { MapComponent } from '../components/Map'
-import { MapButton, MapNav } from '../components/Buttons'
+import { Button, MapButton, MapNav, MyButton } from '../components/Buttons'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
 const AddCar = ({ navigation }) => {
-
-    const [view, setView] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -19,9 +17,8 @@ const AddCar = ({ navigation }) => {
             </SafeAreaView>
             <Modal
                 animationType='slide'
-                onDismiss={() => console.log('close')}
                 transparent
-                visible={ view }
+                visible={ true }
             >
                 <View
                     style={{
@@ -32,35 +29,34 @@ const AddCar = ({ navigation }) => {
                 >
                         <View
                             style={{
-                                height: '40%',
+                                height: '50%',
                                 width: '100%',
                                 backgroundColor: '#FFFF',
                         }}>
+                            <Text style={styles.text}>SELECCIONAR VEHICULOS</Text>
 
                             <View
                                 style={{
-                                    height: 50,
+                                    alignSelf: 'center',
+                                    height: 100,
                                 }}
                             >
-                                <View 
-                                    style= {{
-                                    flexDirection: 'row',
-                                    justifyContent: 'flex-end',
-                                    paddingHorizontal: 10,
-                                }}
-                                >
-                                    <Icon onPress={() => {setView(false);}} style={styles.IconSearch__black} name="close-outline" size={30} color="#900" />
+                                <View style={{backgroundColor: '#fafa', height: 200, marginTop: 10,}}>
+                                    <SafeAreaView>
+                                        <Text>Hola Mundo</Text>
+                                    </SafeAreaView>
                                 </View>
-                                <View style={styles.service_let}>
-                                    <MapButton
-                                        text = 'RESERVA CON ANTICIPACION'
-                                        onPress = { () => {
-                                            navigation.navigate('Ready')
-                                        }}
-                                    />
-                                </View>
-                                <View style={styles.service_now}>
-                                    <MapButton style={{ backgroundColor: '#FAFAFA',}} onPress={ () => {navigation.navigate('Ready')}} text = 'SOLICITAR SERVICIO AHORA'/>
+                                <View style={styles.buttons}>
+                                    <View style={{width: '60%',}}>
+                                        <MyButton
+                                            text = 'SELECCIONAR VEHICULO'
+                                        />
+                                    </View>
+                                    <View style={{width: '60%',}}>
+                                        <Button
+                                            text = 'CANCELAR'
+                                        />
+                                    </View>
                                 </View>
                             </View>
                         </View>
@@ -81,13 +77,19 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-    service_now: {
-        height: '100%',
-        width: '100%',
-        top: 30,
+    text: {
+        fontSize: 20,
+        fontFamily: '',
+        fontWeight: 'bold',
+        color: '#87ceeb',
+        paddingTop: 20,
+        alignSelf: 'center',
     },
-    service_let: {
-        height: '70%',
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: 300,
+        marginTop: 10,
     },
 })
 
