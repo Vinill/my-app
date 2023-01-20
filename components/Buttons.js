@@ -72,10 +72,29 @@ export function MapNav(props) {
 
 export function Button(props) {
 
-    const { onPress, text } = props
+    const { onPress, text} = props
 
     return (
-        <TouchableOpacity style = {styles.Button}>
+        <TouchableOpacity onPress={ onPress } style = {styles.Button}>
+            <Text
+                style = {{
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    color: '#fafafa',
+                }}
+            >
+                { text }
+            </Text>
+        </TouchableOpacity>
+    );
+}
+
+export function MyButton(props) {
+
+    const { onPress, text} = props
+
+    return (
+        <TouchableOpacity style = {styles.ButtonTwo}>
             <Text
                 style = {{
                     fontSize: 15,
@@ -98,7 +117,15 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 50,
+    },
+    ButtonTwo: {
+        backgroundColor: '#00bfff',
+        width: '85%',
+        height: 50,
+        borderRadius: 25,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     button: {
         width: '80%',

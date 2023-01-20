@@ -1,8 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import React from 'react'
+import AddCar from '../screens/AddCar'
 import Home from '../screens/Home'
-import Ready from '../screens/Ready'
+import Regist from '../screens/RegistCar'
+import Ready from '../screens/Request'
 
 
 const Stack = createNativeStackNavigator()
@@ -24,6 +26,16 @@ const MainStack = () => {
                 <Stack.Screen
                     name = 'Ready'
                     component = { Ready }
+                />
+
+                <Stack.Screen
+                    name = 'Regist'
+                    component = { Regist }
+                />
+
+                <Stack.Screen
+                    name = 'AddCar'
+                    component = { AddCar }
                 />
 
             </Stack.Navigator>

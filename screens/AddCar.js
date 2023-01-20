@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-const Home = ({ navigation }) => {
+const AddCar = ({ navigation }) => {
 
     const [view, setView] = useState(false);
 
@@ -17,8 +17,6 @@ const Home = ({ navigation }) => {
                 <MapComponent/>
 
             </SafeAreaView>
-            <MapButton onPress={() => { setView(true); }} text = 'Confirmar ubicacion'/>
-            <MapNav onPress = {() => alert('Ubicacion confirmada')} text = '-34.802243 -55.900519'/>
             <Modal
                 animationType='slide'
                 onDismiss={() => console.log('close')}
@@ -93,4 +91,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Home;
+export default AddCar;

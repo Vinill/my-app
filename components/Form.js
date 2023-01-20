@@ -5,16 +5,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function Form(props) {
 
-    const { onPress, text, name } = props
+    const { text, name } = props
 
     return (
         <TouchableOpacity style={styles.container}>
             <View style={styles.icon}>
-            <Icon 
-                onPress={() => {}}
-                name={ name } 
-                size={25} color="#000000" 
-            />
+                <Icon 
+                    onPress={() => {}}
+                    name={ name } 
+                    size={25} color="#808080" 
+                />
             </View>
             <Text style={styles.text}>
                 { text }
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         width: '90%',
         justifyContent: 'space-around',
-        paddingTop: '10%',
+        paddingTop: 30,
     },
     icon: {
         paddingStart: '10%',

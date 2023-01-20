@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
 import MainStack from './navigation/MainStack';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
 
 //<></>
-//<MapButton onPress = {() => alert('Ubicacion confirmada')} text = 'Confirmar ubicacion'/>
-//<MapNav onPress = {() => alert('Ubicacion confirmada')} text = '-34.802243 -55.900519'/>
+//rnfe
 
 function App() {
   return (
     <View style={{ flex: 1 }}>
-
-        <MainStack/>
-
+          <MainStack/>
     </View>
   );
 }
