@@ -1,7 +1,7 @@
 import React, { useState }  from 'react'
-import { View, StyleSheet, Modal } from 'react-native'
+import { View, StyleSheet, Modal, Text } from 'react-native'
 import { MapComponent } from '../components/Map'
-import { MapButton, MapNav } from '../components/Buttons'
+import { Button, MapButton, MapNav, MyButton } from '../components/Buttons'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -34,14 +34,15 @@ const Home = ({ navigation }) => {
                 >
                         <View
                             style={{
-                                height: '40%',
+                                height: '45%',
                                 width: '100%',
-                                backgroundColor: '#FFFF',
+                                backgroundColor: '#FFF',
                         }}>
 
                             <View
                                 style={{
-                                    height: 50,
+                                    flexDirection: 'column',
+                                    padding: 10,
                                 }}
                             >
                                 <View 
@@ -51,18 +52,32 @@ const Home = ({ navigation }) => {
                                     paddingHorizontal: 10,
                                 }}
                                 >
-                                    <Icon onPress={() => {setView(false);}} style={styles.IconSearch__black} name="close-outline" size={30} color="#900" />
+                                    <Icon onPress={() => {setView(false);}} style={styles.IconSearch__black} name="close-outline" size={30} color="#808080" />
                                 </View>
+                                <View style={styles.Texts}>
+                                    <Icon name="location-sharp" size={30} color="#000" style={{paddingEnd: 10,}}/>
+                                    <Text style={{ fontWeight: 'bold', fontSize: 23, paddingStart: 10,}}>Ubicacion del servicio</Text>
+                                </View>
+                                <Text 
+                                    style={{
+                                        color: '#808080',
+                                        alignSelf: 'center', 
+                                        fontSize: 22, 
+                                        fontWeight: '400',
+                                        width: 200,
+                                        textAlign: 'center',
+                                        paddingTop: 10,
+                                    }}>
+                                    53RW+PH, 15800
+                                    Ciudad de la Costa
+                                </Text>
                                 <View style={styles.service_let}>
-                                    <MapButton
+                                    <Button
                                         text = 'RESERVA CON ANTICIPACION'
-                                        onPress = { () => {
-                                            navigation.navigate('Ready')
-                                        }}
-                                    />
+                                        onPress = { () => {navigation.navigate('Ready')}} />
                                 </View>
                                 <View style={styles.service_now}>
-                                    <MapButton style={{ backgroundColor: '#FAFAFA',}} onPress={ () => {navigation.navigate('Ready')}} text = 'SOLICITAR SERVICIO AHORA'/>
+                                    <MyButton onPress={ () => {navigation.navigate('Ready')}} text = 'SOLICITAR SERVICIO AHORA'/>
                                 </View>
                             </View>
                         </View>
@@ -75,7 +90,6 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -84,12 +98,17 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     service_now: {
-        height: '100%',
         width: '100%',
-        top: 30,
+        top: 20,
     },
     service_let: {
-        height: '70%',
+        paddingTop: 50,
+    },
+    Texts: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingEnd: 30,
     },
 })
 
