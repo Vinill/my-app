@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {LineText, Line} from '../components/Lines'
-import Form from '../components/Form'
+import { Form, FormCar } from '../components/Form'
 import { Button, MyButton } from '../components/Buttons'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -25,7 +25,7 @@ const Regist = ({ navigation }) => {
                 <Text style={styles.text}>REGISTRAR VEHICULO</Text>
 
                 <View style={styles.fecha}>
-                    <Form text = 'VEHICULO' name = 'car'/>
+                    <FormCar/>
                 </View>
 
                 <Line/>

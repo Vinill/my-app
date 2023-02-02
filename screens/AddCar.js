@@ -44,6 +44,7 @@ const AddCar = ({ navigation }) => {
                                 <View style={{ height: 200, marginTop: 10 }}>
                                     <ButtonSquare 
                                         text = 'AGREGAR VEHICULO'
+                                        onPress = {() => {navigation.navigate('Regist')}}
                                     />
                                 </View>
                                 <View style={styles.buttons}>

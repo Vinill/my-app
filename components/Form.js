@@ -1,9 +1,10 @@
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Menu, MenuOption, MenuOptions, MenuProvider, MenuTrigger } from 'react-native-popup-menu';
 
 
-export default function Form(props) {
+export function Form(props) {
 
     const { text, name } = props
 
@@ -20,7 +21,29 @@ export default function Form(props) {
                 { text }
             </Text>
         </TouchableOpacity>
-    )
+    );
+}
+
+export function FormCar(props) {
+
+    const [ car, setCar] = useState('');
+
+    return (
+        <TouchableOpacity style={styles.container}>
+            <View style={styles.icon}>
+            </View>
+            <MenuProvider style={styles.formCar}>
+                <Menu>
+                    <MenuTrigger text='Hola' value={car}/>
+                    <MenuOptions>
+                        <MenuOption onSelect={(value) => setCar(value)} text='Opcion 1'></MenuOption>
+                        <MenuOption text='Opcion 2'></MenuOption>
+                        <MenuOption disabled={true} text='Opcion 2'></MenuOption>
+                    </MenuOptions>
+                </Menu>
+            </MenuProvider>
+        </TouchableOpacity>
+    );
 }
 
 const styles = StyleSheet.create({
@@ -34,6 +57,13 @@ const styles = StyleSheet.create({
     icon: {
         paddingStart: '10%',
         alignSelf: 'flex-start',
+    },
+    formCar: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: '90%',
+        justifyContent: 'space-around',
+        paddingTop: 30,
     },
 })
 

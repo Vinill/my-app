@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {LineText, Line} from '../components/Lines'
-import Form from '../components/Form'
+import { Form } from '../components/Form'
 import { Button, MyButton } from '../components/Buttons'
 import Fecha from '../components/Fecha'
 import Hora from '../components/Hora'
