@@ -1,7 +1,7 @@
 import React, { useState }  from 'react'
 import { View, StyleSheet, Modal, Text } from 'react-native'
 import { MapComponent } from '../components/Map'
-import { Button, MapButton, MapNav, MyButton } from '../components/Buttons'
+import { Android, Button, ButtonSquare, MapButton, MapNav, MyButton } from '../components/Buttons'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -41,10 +41,10 @@ const AddCar = ({ navigation }) => {
                                     height: 100,
                                 }}
                             >
-                                <View style={{backgroundColor: '#fafa', height: 200, marginTop: 10,}}>
-                                    <SafeAreaView>
-                                        <Text>Hola Mundo</Text>
-                                    </SafeAreaView>
+                                <View style={{ height: 200, marginTop: 10 }}>
+                                    <ButtonSquare 
+                                        text = 'AGREGAR VEHICULO'
+                                    />
                                 </View>
                                 <View style={styles.buttons}>
                                     <View style={{width: '60%',}}>

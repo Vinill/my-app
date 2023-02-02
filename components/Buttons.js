@@ -109,6 +109,32 @@ export function MyButton(props) {
     );
 }
 
+export function ButtonSquare(props) {
+
+    const { onPress, text} = props
+
+    return (
+        <TouchableOpacity onPress={ onPress } style = {styles.ButtonSquare}>
+            <Icon
+                name='add-outline'
+                size={30} color="#1a1a1a"
+                bold={100}
+            />
+            <Text
+                style = {{
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    color: '#1a1a1a',
+                    textAlign: 'center',
+                    paddingStart: 10,
+                }}
+            >
+                { text }
+            </Text>
+        </TouchableOpacity>
+    );
+}
+
 const styles = StyleSheet.create({
     Button: {
         backgroundColor: '#808080',
@@ -149,6 +175,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    ButtonSquare: {
+        width: '90%',
+        height: 50,
+        alignSelf: 'center',
+        position: 'absolute',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#dcdcdc',
+        marginTop: 20,
     },
     IconSearch: {
         paddingStart: 10,
