@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {LineText, Line} from '../components/Lines'
-import { Form, FormCar } from '../components/Form'
+import { Form, SelectCar } from '../components/Form'
 import { Button, MyButton } from '../components/Buttons'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -24,32 +24,42 @@ const Regist = ({ navigation }) => {
 
                 <Text style={styles.text}>REGISTRAR VEHICULO</Text>
 
-                <View style={styles.fecha}>
-                    <FormCar/>
+                <View style={{paddingStart: 40,}}>
+                    <SelectCar name='car-sport'
+                    text='VEHICULO'
+                    />
                 </View>
 
                 <Line/>
 
-                <View>
-                    <Form text = 'MARCA' name = 'add-circle-outline'/>
+                <View style={{paddingStart: 40,}}>
+                    <SelectCar name='car-sport'
+                    text='VEHICULO'
+                    />
                 </View>
 
                 <Line/>
 
-                <View>
-                    <Form text = 'MODELO' name = 'add-circle-outline' />
+                <View style={{paddingStart: 40,}}>
+                    <SelectCar name='car-sport'
+                    text='VEHICULO'
+                    />
                 </View>
 
                 <Line/>
                 
-                <View>
-                    <Form text = 'COLOR' name = 'add-circle-outline' />
+                <View style={{paddingStart: 40,}}>
+                    <SelectCar name='car-sport'
+                    text='VEHICULO'
+                    />
                 </View>
 
                 <Line/>
 
-                <View>
-                    <Form text = 'CONTRASEÑA' name = 'lock-closed-outline' />
+                <View style={{paddingStart: 40,}}>
+                    <SelectCar name='car-sport'
+                    text='VEHICULO'
+                    />
                 </View>
 
                 <Line/>
@@ -90,7 +100,6 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 20,
-        fontFamily: '',
         fontWeight: 'bold',
         color: '#87ceeb',
         paddingTop: 2,

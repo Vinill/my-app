@@ -15,32 +15,14 @@ const AddCar = ({ navigation }) => {
                 <MapComponent/>
 
             </SafeAreaView>
-            <Modal
-                animationType='slide'
-                transparent
-                visible={ true }
-            >
-                <View
-                    style={{
-                        flex:1,
-                        justifyContent: 'flex-end',
-                        alignItems: 'center',
-                    }}
-                >
                         <View
                             style={{
-                                height: '50%',
+                                height: '100%',
                                 width: '100%',
                                 backgroundColor: '#FFFF',
                         }}>
                             <Text style={styles.text}>SELECCIONAR VEHICULOS</Text>
 
-                            <View
-                                style={{
-                                    alignSelf: 'center',
-                                    height: 100,
-                                }}
-                            >
                                 <View style={{ height: 200, marginTop: 10 }}>
                                     <ButtonSquare 
                                         text = 'AGREGAR VEHICULO'
@@ -48,7 +30,7 @@ const AddCar = ({ navigation }) => {
                                     />
                                 </View>
                                 <View style={styles.buttons}>
-                                    <View style={{width: '60%',}}>
+                                    <View style={{width: '60%'}}>
                                         <MyButton
                                             text = 'SELECCIONAR VEHICULO'
                                         />
@@ -59,10 +41,7 @@ const AddCar = ({ navigation }) => {
                                         />
                                     </View>
                                 </View>
-                            </View>
                         </View>
-                </View>
-            </Modal>
         </View>
     );
 }
@@ -89,8 +68,9 @@ const styles = StyleSheet.create({
     buttons: {
         flexDirection: 'row',
         justifyContent: 'center',
-        width: 300,
+        width: '100%',
         marginTop: 10,
+        padding: 50,
     },
 })
 

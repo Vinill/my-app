@@ -1,7 +1,8 @@
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Text, Modal } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Menu, MenuOption, MenuOptions, MenuProvider, MenuTrigger } from 'react-native-popup-menu';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import ModalPicker from './ModalPicker';
 
 
 export function Form(props) {
@@ -17,32 +18,58 @@ export function Form(props) {
                     size={25} color="#808080" 
                 />
             </View>
-            <Text style={styles.text}>
+            <Text>
                 { text }
             </Text>
         </TouchableOpacity>
     );
 }
 
-export function FormCar(props) {
+export function SelectCar(props) {
 
-    const [ car, setCar] = useState('');
+    const { name, text } = props
+
+    const [ car, setCar] = useState(text);
+
+    const [isModalVisible, setisModalVisible] = useState(false);
+
+    const changueModalVisibility = (bool) => {
+        setisModalVisible(bool)
+    }
+
+    const setData = (option) => {
+        setCar(option)
+    } 
 
     return (
-        <TouchableOpacity style={styles.container}>
-            <View style={styles.icon}>
+        <SafeAreaView style={styles.container}>
+            <TouchableOpacity
+                onPress={() => changueModalVisibility(true)}
+                style={styles.touchableOpacity}
+            >
+                <View style={styles.iconCar}>
+                <Icon 
+                    onPress={() => {}}
+                    name={ name } 
+                    size={25} color="#808080" 
+                />
             </View>
-            <MenuProvider style={styles.formCar}>
-                <Menu>
-                    <MenuTrigger text='Hola' value={car}/>
-                    <MenuOptions>
-                        <MenuOption onSelect={(value) => setCar(value)} text='Opcion 1'></MenuOption>
-                        <MenuOption text='Opcion 2'></MenuOption>
-                        <MenuOption disabled={true} text='Opcion 2'></MenuOption>
-                    </MenuOptions>
-                </Menu>
-            </MenuProvider>
-        </TouchableOpacity>
+                <Text style={styles.text}>
+                    {car}
+                </Text>
+            </TouchableOpacity>
+            <Modal
+                transparent={true}
+                animationType='slide'
+                visible={isModalVisible}
+                nRequestClose={() => changueModalVisibility(false)}
+            >
+                <ModalPicker
+                    changueModalVisibility={changueModalVisibility}
+                    setData={setData}
+                />
+            </Modal>
+        </SafeAreaView>
     );
 }
 
@@ -52,18 +79,24 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
         width: '90%',
         justifyContent: 'space-around',
-        paddingTop: 30,
     },
     icon: {
         paddingStart: '10%',
         alignSelf: 'flex-start',
     },
-    formCar: {
+    text: {
+        margin: 10,
+    },
+    touchableOpacity: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        width: '90%',
-        justifyContent: 'space-around',
-        paddingTop: 30,
+        height: '90%',
+        width: 300,
+        borderWidth: 1,
+    },
+    iconCar:{
+        width: 150,
+        alignItems: 'flex-start',
+        padding: 10,
     },
 })
 
