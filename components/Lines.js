@@ -7,7 +7,7 @@ export function Line() {
             height: 1.5,
             backgroundColor: 'rgba(1, 1, 1 ,1)',
             alignSelf: 'stretch',
-            marginHorizontal: 50, 
+            marginHorizontal: 60,
         }} />
     )
 }

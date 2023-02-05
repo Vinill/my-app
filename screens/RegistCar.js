@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native'
 import React from 'react'
 import {LineText, Line} from '../components/Lines'
-import { Form, SelectCar } from '../components/Form'
+import { Form, Password, SelectCar } from '../components/Form'
 import { Button, MyButton } from '../components/Buttons'
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -33,15 +33,15 @@ const Regist = ({ navigation }) => {
                 <Line/>
 
                 <View style={{paddingStart: 40,}}>
-                    <SelectCar name='car-sport'
-                    text='VEHICULO'
+                    <SelectCar name='add-circle'
+                    text='MARCA'
                     />
                 </View>
 
                 <Line/>
 
                 <View style={{paddingStart: 40,}}>
-                    <SelectCar name='car-sport'
+                    <SelectCar name='add-circle'
                     text='VEHICULO'
                     />
                 </View>
@@ -49,7 +49,7 @@ const Regist = ({ navigation }) => {
                 <Line/>
                 
                 <View style={{paddingStart: 40,}}>
-                    <SelectCar name='car-sport'
+                    <SelectCar name='add-circle'
                     text='VEHICULO'
                     />
                 </View>
@@ -57,8 +57,7 @@ const Regist = ({ navigation }) => {
                 <Line/>
 
                 <View style={{paddingStart: 40,}}>
-                    <SelectCar name='car-sport'
-                    text='VEHICULO'
+                    <Password name='lock-closed'
                     />
                 </View>
 
@@ -90,19 +89,18 @@ const styles = StyleSheet.create({
     },
     form: {
         alignItems: 'center',
-        flexDirection: 'column',
         height: '100%',
         width: '100%',
         backgroundColor: '#ffffff',
         borderRadius: 50,
         marginTop: -80,
-        paddingHorizontal: 10,
     },
     text: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#87ceeb',
         paddingTop: 2,
+        paddingVertical: 10,
     },
     buttonOne: {
         marginTop: 30,

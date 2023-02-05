@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, StyleSheet, Text, Modal } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Text, Modal, TextInput } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -48,19 +48,19 @@ export function SelectCar(props) {
                 style={styles.touchableOpacity}
             >
                 <View style={styles.iconCar}>
-                <Icon 
-                    onPress={() => {}}
-                    name={ name } 
-                    size={25} color="#808080" 
-                />
-            </View>
+                    <Icon 
+                        onPress={() => {}}
+                        name={ name } 
+                        size={30} color="#808080" 
+                    />
+                </View>
                 <Text style={styles.text}>
                     {car}
                 </Text>
             </TouchableOpacity>
             <Modal
                 transparent={true}
-                animationType='slide'
+                animationType='fade'
                 visible={isModalVisible}
                 nRequestClose={() => changueModalVisibility(false)}
             >
@@ -73,30 +73,50 @@ export function SelectCar(props) {
     );
 }
 
+export function Password(props) {
+
+    const { text, name } = props
+
+    return (
+        <TouchableOpacity style={{flexDirection: 'row', padding: 10, paddingLeft: 35,}}>
+            <View style={styles.icon}>
+                <Icon 
+                    onPress={() => {}}
+                    name={ name } 
+                    size={25} color="#808080" 
+                />
+            </View>
+            <TextInput 
+                style={{width: '100%', paddingLeft: 45,}}
+                placeholder="CONTRASEÑA"
+                placeholderTextColor="grey"
+                returnKeyType='go'
+                secureTextEntry
+                autoCorrect={false}
+            />
+        </TouchableOpacity>
+    );
+}
+
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        width: '90%',
-        justifyContent: 'space-around',
+        alignItems: 'center',
+        paddingTop: -40,
     },
     icon: {
         paddingStart: '10%',
         alignSelf: 'flex-start',
     },
     text: {
-        margin: 10,
+        margin: 15,
+        paddingStart: 20,
     },
     touchableOpacity: {
         flexDirection: 'row',
-        height: '90%',
-        width: 300,
-        borderWidth: 1,
+        width: 260,
     },
     iconCar:{
-        width: 150,
-        alignItems: 'flex-start',
-        padding: 10,
+        padding: 8,
     },
 })
 
